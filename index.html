@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Meriendas - Principal</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <body class="index">
+    <div class="contenedor">
+        <h1> Menú de Meriendas </h1>
+        <p class="subtitulo">Bienvenido a nuestro sitio de meriendas deliciosas</p>
+
+        <div class="seccion">
+            <h2>Nuestras Meriendas Disponibles</h2>
+            <ul id="listaMeriendas"></ul>
+
+            <div class="botones">
+                <button onclick="mostrarCantidad()">Mostrar Cantidad Total</button>
+                <button onclick="limpiarResultado()">Limpiar Resultado</button>
+            </div>
+
+            <div id="resultado" class="resultado"></div>
+        </div>
+
+        <div class="navegacion">
+            <a href="destacados.html"> Tarjetas Seleccionadas</a>
+            <a href="listado.html"> Filtrado Simple</a>
+        </div>
+    </div>
+
+    <script>
+        // Ejercicio 1: Arreglo de meriendas
+        const meriendas = [
+            "Galletas de chocolate",
+            "Jugo de naranja",
+            "Sándwich de jamón y queso",
+            "Manzana",
+            "Yogur natural",
+            "Papas fritas"
+        ];
+
+        // Mostrar meriendas al cargar la página usando forEach
+        function cargarMeriendas() {
+            const lista = document.getElementById('listaMeriendas');
+            lista.innerHTML = ''; // Limpiar lista
+
+            // Usar forEach para recorrer el arreglo
+            meriendas.forEach((merienda, indice) => {
+                const li = document.createElement('li');
+                li.textContent = `${indice + 1}. ${merienda}`;
+                lista.appendChild(li);
+            });
+        }
+        // Mostrar la cantidad de elementos en el arreglo
+        function mostrarCantidad() {
+            const resultado = document.getElementById('resultado');
+            const cantidad = meriendas.length;
+            resultado.textContent = `Total de meriendas disponibles: ${cantidad}`;
+            resultado.classList.add('visible');
+        }
+        // Limpiar el resultado
+        function limpiarResultado() {
+            const resultado = document.getElementById('resultado');
+            resultado.classList.remove('visible');
+            resultado.textContent = '';
+        }
+
+        // Cargar meriendas cuando la página carga
+        window.addEventListener('load', cargarMeriendas);
+    </script>
+</body>
+</html>
