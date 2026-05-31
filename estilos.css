@@ -100,6 +100,10 @@ button {
     border-left: 3px solid #4caf50;
     display: none;
 }
+.resultado.visible {
+    display: block;
+}
+
 .info-mensaje {
     margin-top: 15px;
     padding: 10px;
