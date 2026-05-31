@@ -27,3 +27,132 @@ h1 {
     padding-bottom: 10px;
     border-bottom: 2px solid #333;
 }
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.seccion {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+}
+
+.seccion h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    border-left: 3px solid #333;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.botones {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.resultado {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-left: 3px solid #4caf50;
+    display: none;
+}
+.info-mensaje {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-left: 3px solid #4caf50;
+}
+
+.navegacion {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid #ccc;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.navegacion a {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+
+.tarjeta {
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.tarjeta h3 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.filtro-btn {
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
