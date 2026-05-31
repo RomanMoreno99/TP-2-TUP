@@ -40,6 +40,88 @@
             <a href="destacados.html"> Siguiente página →</a>
         </div>
     </div>
-    
+    <script>
+    // Datos de meriendas con categoría y precio
+        const meriendas = [
+            { nombre: "Galletas de chocolate", categoria: "solidos", precio: "$2.50" },
+            { nombre: "Jugo de naranja", categoria: "bebidas", precio: "$1.50" },
+            { nombre: "Sándwich de jamón y queso", categoria: "solidos", precio: "$4.00" },
+            { nombre: "Manzana", categoria: "solidos", precio: "$1.00" },
+            { nombre: "Yogur natural", categoria: "lacteos", precio: "$2.00" },
+            { nombre: "Papas fritas", categoria: "solidos", precio: "$1.75" },
+            { nombre: "Leche entera", categoria: "bebidas", precio: "$1.80" },
+            { nombre: "Queso fresco", categoria: "lacteos", precio: "$3.50" }
+        ];
+
+        let categoriaActual = 'todas';
+
+        // Mostrar todas las meriendas
+        function mostrarTodos() {
+            categoriaActual = 'todas';
+            actualizarBotonActivo('todas');
+            renderizarTabla(meriendas);
+        }
+
+        // Filtrar por categoría usando filter
+        function filtrarPorCategoria(categoria) {
+            categoriaActual = categoria;
+            actualizarBotonActivo(categoria);
+            const filtradas = meriendas.filter(item => item.categoria === categoria);
+            renderizarTabla(filtradas);
+        }
+
+        // Renderizar la tabla con los datos
+        function renderizarTabla(datos) {
+            const cuerpo = document.getElementById('cuerpoTabla');
+            cuerpo.innerHTML = ''; // Limpiar tabla
+
+
+            // Usar forEach para crear filas
+            datos.forEach((merienda, indice) => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${indice + 1}</td>
+                    <td>${merienda.nombre}</td>
+                    <td>${merienda.categoria.charAt(0).toUpperCase() + merienda.categoria.slice(1)}</td>
+                    <td>${merienda.precio}</td>
+                `;
+                fila.addEventListener('click', function() {
+                    resaltarFila(this);
+                });
+                cuerpo.appendChild(fila);
+            });
+
+            actualizarMensaje(`Se encontraron ${datos.length} merienda(s) en esta categoría.`);
+        }
+
+        // Actualizar cual botón está activo
+        function actualizarBotonActivo(categoria) {
+            document.querySelectorAll('.filtro-btn').forEach(btn => {
+                btn.classList.remove('activo');
+            });
+            if (categoria === 'todas') {
+                document.querySelectorAll('.filtro-btn')[0].classList.add('activo');
+            } else {
+                event.target.classList.add('activo');
+            }
+        }
+
+        // Actualizar mensaje de información
+        function actualizarMensaje(mensaje) {
+            const infoMensaje = document.getElementById('infoMensaje');
+            infoMensaje.textContent = mensaje;
+        }
+
+        // Resaltar fila al hacer clic
+        function resaltarFila(elemento) {
+            document.querySelectorAll('#cuerpoTabla tr').forEach(fila => {
+                fila.style.backgroundColor = '';
+            });
+            elemento.style.backgroundColor = '#c8e6c9';
+        }
+
+        // Cargar tabla al cargar la página
+        window.addEventListener('load', mostrarTodos);
+    </script>
 </body>
 </html>
