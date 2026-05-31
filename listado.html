@@ -6,7 +6,40 @@
     <title>Listado Completo de Meriendas</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
+<body class="listado">
+    <div class="contenedor">
+        <h1> Listado Completo de Meriendas </h1>
+        <p class="subtitulo">Explora todas nuestras opciones disponibles</p>
+
+        <div class="seccion">
+            <h2>Filtrar por Categoría</h2>
+            <div class="filtros">
+                <button class="filtro-btn activo" onclick="mostrarTodos()">Todas</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('bebidas')">Bebidas</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('solidos')">Sólidos</button>
+                <button class="filtro-btn" onclick="filtrarPorCategoria('lacteos')">Lácteos</button>
+            </div>
+
+            <table id="tablaMeriendas">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla"></tbody>
+            </table>
+
+            <div id="infoMensaje" class="info-mensaje"></div>
+        </div>
+
+        <div class="navegacion">
+            <a href="index.html">← Volver a Inicio</a>
+            <a href="destacados.html"> Siguiente página →</a>
+        </div>
+    </div>
     
 </body>
 </html>
