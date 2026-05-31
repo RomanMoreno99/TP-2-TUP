@@ -39,7 +39,7 @@
                 nombre: "Yogur natural con frutos secos",
                 descripcion: "Yogur natural sin azúcares añadidos. Excelente para la salud digestiva."
             }
-        ];   
+        ];
         // Mostrar meriendas destacadas usando map
         function cargarDestacados() {
             const container = document.getElementById('destacadosContainer');
@@ -53,7 +53,7 @@
                     <h3>${item.nombre}</h3>
                     <p>${item.descripcion}</p>
                 `;
-                tarjeta.addEventListener('click', function() {
+                tarjeta.addEventListener('click', function () {
                     resaltarTarjeta(this);
                 });
                 return tarjeta;
@@ -62,7 +62,7 @@
             // Agregar todas las tarjetas al contenedor
             tarjetas.forEach(tarjeta => container.appendChild(tarjeta));
         }
-                // Evento de clic para resaltar tarjetas
+        // Evento de clic para resaltar tarjetas
         function resaltarTarjeta(elemento) {
             // Remover resalte de otros elementos
             document.querySelectorAll('.tarjeta').forEach(tarjeta => {
